@@ -16,4 +16,10 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.post('/', (req, res) => {
+  console.log(req.body);
+  console.log(process.env.PORT);
+  res.json({status: "Ok"});
+});
+
 module.exports = router;

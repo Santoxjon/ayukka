@@ -36,16 +36,21 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
-console.log(chalk.blue.underline(`Conectando a  -> ` + process.env.MONGODB_URI));
-MongoClient.connect(process.env.MONGODB_URI, function (err, client) { // Local
-  // MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
-  if (err !== null) {
-    console.log(err);
-  } else {
-    app.locals.db = client.db("ayukkadb");
-    console.log(chalk.blue.underline("Conectado!"));
-  }
-});
+console.log(chalk.black.bgMagentaBright.underline(`Conectando a  -> ${process.env.MONGODB_LOCATION}`));
+MongoClient.connect(
+  process.env.MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  (err, client) => { 
+    if (err !== null) {
+      console.log(err);
+    } else {
+      app.locals.db = client.db("ayukkadb");
+      console.log(chalk.black.bgGreenBright.underline(`Conectado!`));
+    }
+  });
 
 // error handler
 app.use(function (err, req, res, next) {
