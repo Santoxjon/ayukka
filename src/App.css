@@ -1,38 +1,72 @@
 .App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  max-width: 1920px;
+}
+
+nav {
+  background-color: #3E2F41 !important;
+}
+
+.navbar-brand {
+  font-size: 2em !important;
+  padding: 0 !important;
+}
+
+#addColumnBtn {
+  background-color: #5A79B0;
+  border-color: #5A79C0;
+}
+
+#addColumnBtn:hover {
+  background-color: #6c91be;
+}
+
+#addTask {
+  background-color: #B9719E;
+  border-color: #b46596;
+}
+
+#addTask:hover {
+  background-color: #b67ea1;
+}
+
+main {
+  background-color: #FFFFFE;
+}
+
+#columns {
+  display: grid;
+  grid-template-columns: repeat(25%, 4);
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  background-color: #5A79C0;
   text-align: center;
+  padding: 15px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer a{
+  font-size: 1.3em;
+  color: #FFFFFE;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+footer a:hover {
+  color: #FFFFFE;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer svg{
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+mycolors {
+  color: #3E2F41;
+  color: #5A79B0;
+  color: #ABADC4;
+  color: #CCCCCC;
+  color: #CCCCD3;
+  color: #B9719E;
 }
