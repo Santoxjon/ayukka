@@ -5,7 +5,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import {faSearch} from "@fortawesome/free-solid-svg-icons"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -31,10 +31,57 @@ export function Main() {
     return (
         <main>
             <div id="columns">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div className="column">
+                    <div className=".tasks">
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="column">
+                    <div className=".tasks">
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="column">
+                    <div className=".tasks">
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="column">
+                    <div className=".tasks">
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="column">
+                    <div className=".tasks">
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="column">
+                    <div className=".tasks">
+                        <div className="task">
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     )

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
-  max-width: 1920px;
+  min-width: 1230px;
 }
 
 nav {
@@ -34,23 +34,38 @@ nav {
 
 main {
   background-color: #FFFFFE;
+  position: relative;
 }
 
 #columns {
-  display: grid;
-  grid-template-columns: repeat(25%, 4);
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightblue;
   height: 100%;
+  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 250px);
+  grid-template-rows: fit-content;
+  padding-right: 10px;
+}
+
+.column {
+  margin: 10px;
+  background-color: lightcoral;
+  word-wrap: break-word
 }
 
 footer {
   background-color: #5A79C0;
   text-align: center;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
-footer a{
-  font-size: 1.3em;
+footer a {
+  font-size: .85em;
   color: #FFFFFE;
 }
 
@@ -58,7 +73,7 @@ footer a:hover {
   color: #FFFFFE;
 }
 
-footer svg{
+footer svg {
   margin-right: 10px;
 }
 
