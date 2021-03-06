@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Column from './Column';
+import Task from './Task';
 
 function Columns() {
+
     const API_URL = `${process.env.REACT_APP_API_PROTOCOL}://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
     const [columns, setColumns] = useState([])
     const [listColumns, setListColumns] = useState([]);
@@ -9,7 +12,6 @@ function Columns() {
         fetch(`${API_URL}/columns`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setColumns(data)
             })
     }
@@ -23,17 +25,11 @@ function Columns() {
             columns.map(column => {
                 let taskList = column.tasks.map(task => {
                     return (
-                        <div className="task">{task.name}</div>
+                        <Task task={task} column={column} />
                     )
                 });
                 return (
-                    <div className="column" style={{ backgrounColor: "red"}}>
-                        <h2>{column.name}</h2>
-                        <p>{column.description}</p>
-                        <div className="tasks">
-                            {taskList}
-                        </div>
-                    </div>
+                    <Column column={column} taskList={taskList}/>
                 );
             })
         )
