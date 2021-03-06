@@ -63,6 +63,7 @@ main {
   margin-left: 1%;
 }
 
+
 .col-title {
   margin: 0;
   font-style: italic;
@@ -116,6 +117,31 @@ main {
 .priority {
   font-weight: 600;
   margin: 0;
+}
+
+#create_task_root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#create_task {
+  background-color: rgba(227, 232, 238, 0.9);
+  border-radius: 5px;
+  min-width: 650px;
+  width: 35vw;
+  padding: 15px;
+}
+
+textarea {
+  resize: none !important;
+}
+
+.priority-group{
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
