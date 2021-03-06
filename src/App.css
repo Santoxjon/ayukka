@@ -36,7 +36,10 @@ main {
   background-color: #FFFFFE;
   max-height: 100%;
   overflow-y: auto;
-  margin: 5px;
+  padding: 5px;
+  background-image: url('./wallpaper.png');
+  background-size: cover;
+  background-position: center;
 }
 
 #columns {
@@ -60,6 +63,20 @@ main {
   margin-left: 1%;
 }
 
+.col-title {
+  margin: 0;
+  font-style: italic;
+}
+
+.col-description {
+  margin: 0;
+}
+
+.column hr {
+  margin: 5px 0;
+  border-top: black 1px solid;
+}
+
 .tasks {
   display: flex;
   flex-direction: column;
@@ -70,10 +87,35 @@ main {
 .task {
   word-wrap: break-word;
   max-width: 100%;
+  border: 1px solid black;
+  padding: 1.5px 3px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
 }
 
 .task:not(:last-child) {
-  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.task:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+.task hr {
+  border-top: darkgray 1px solid;
+  margin: 2px 0;
+}
+
+.task-text {
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.priority {
+  font-weight: 600;
+  margin: 0;
 }
 
 footer {
@@ -93,6 +135,19 @@ footer a:hover {
 
 footer svg {
   margin-right: 10px;
+}
+
+h1 {
+  font-size: 2rem !important;
+}
+
+h2 {
+  font-size: 1rem !important;
+}
+
+h3 {
+  font-size: 1.35rem !important;
+  margin: 0 !important;
 }
 
 mycolors {
