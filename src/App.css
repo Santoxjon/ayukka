@@ -34,28 +34,46 @@ nav {
 
 main {
   background-color: #FFFFFE;
-  position: relative;
+  max-height: 100%;
+  overflow-y: auto;
+  margin: 5px;
 }
 
 #columns {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: lightblue;
-  height: 100%;
-  overflow-x: auto;
-  display: grid;
-  grid-template-columns: repeat(6, 250px);
-  grid-template-rows: fit-content;
-  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 50%;
 }
 
 .column {
-  margin: 10px;
-  background-color: lightcoral;
-  word-wrap: break-word
+  /* background-color: lightblue; */
+  min-width: 19%;
+  max-width: 19%;
+  overflow-x: auto;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.column:not(:first-child) {
+  margin-left: 1%;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.task {
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.task:not(:last-child) {
+  margin-right: 10px;
 }
 
 footer {
