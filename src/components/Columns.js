@@ -4,32 +4,33 @@ import Task from './Task';
 
 function Columns() {
 
-    const API_URL = `${process.env.REACT_APP_API_PROTOCOL}://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
     const [columns, setColumns] = useState([])
     const [listColumns, setListColumns] = useState([]);
 
-    function getColumns() {
-        fetch(`${API_URL}/columns`)
-            .then(res => res.json())
-            .then(data => {
-                setColumns(data)
-            })
-    }
-
     useEffect(() => {
+        const API_URL = `${process.env.REACT_APP_API_PROTOCOL}://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
+
+        function getColumns() {
+            fetch(`${API_URL}/columns`)
+                .then(res => res.json())
+                .then(data => {
+                    setColumns(data)
+                })
+        }
+
         getColumns();
     }, [])
 
     useEffect(() => {
         setListColumns(
-            columns.map(column => {
-                let taskList = column.tasks.map(task => {
+            columns.map((column, index) => {
+                let taskList = column.tasks.map((task, index) => {
                     return (
-                        <Task task={task} column={column} />
+                        <Task key={`task${index}`} task={task} column={column} />
                     )
                 });
                 return (
-                    <Column column={column} taskList={taskList}/>
+                    <Column key={`col${index}`} column={column} taskList={taskList} />
                 );
             })
         )
