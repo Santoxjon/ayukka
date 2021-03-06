@@ -1,8 +1,13 @@
 function Task(params) {
     let column = params.column;
     let task = params.task;
+
+    function goToTask() {
+       window.location = `/columns/tasks/${task.id}`
+    }
+
     return (
-        <div className="task" style={{ backgroundColor: `rgba(${column.color}, .5)` }} >
+        <div className="task" style={{ backgroundColor: `rgba(${column.color}, .85)` }} onClick={goToTask}>
             <h3>{task.name}</h3>
             <hr />
             <p className="task-text">
