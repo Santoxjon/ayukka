@@ -8,6 +8,16 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Columns from './Columns';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+} from "react-router-dom";
+
 
 export function Header() {
     return (
@@ -29,61 +39,21 @@ export function Header() {
 }
 export function Main() {
     return (
-        <main>
-            <div id="columns">
-                <div className="column">
-                    <div className=".tasks">
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="column">
-                    <div className=".tasks">
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="column">
-                    <div className=".tasks">
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="column">
-                    <div className=".tasks">
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="column">
-                    <div className=".tasks">
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="column">
-                    <div className=".tasks">
-                        <div className="task">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+        <Router>
+            <main>
+                <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/columns" />
+                    </Route>
+                    <Route path="/columns">
+                        <Columns />
+                    </Route>
+                    <Route path="/columns/create">
+                        <p>Crear columna</p>
+                    </Route>
+                </Switch>
+            </main>
+        </Router>
     )
 }
 export function Footer() {
