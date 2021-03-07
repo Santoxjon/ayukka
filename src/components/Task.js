@@ -3,7 +3,7 @@ function Task(params) {
     let task = params.task;
 
     function goToTask() {
-       window.location = `/columns/tasks/${task.id}`
+       window.location = `/columns/${column._id}/tasks/${task.id}`
     }
 
     return (
