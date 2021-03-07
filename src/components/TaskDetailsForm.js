@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons"
+import { faEraser } from "@fortawesome/free-solid-svg-icons"
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons"
 
 import React, { useState, useEffect } from 'react';
@@ -105,6 +105,23 @@ function TaskDetailsForm(params) {
 
     }
 
+    function deleteTask() {
+        let data = { columnId, taskId }
+
+        let fetchData = {
+            method: 'DELETE',
+            headers: { 'Content-Type': "application/json" },
+            body: JSON.stringify(data)
+        }
+
+        fetch(`${API_URL}/columns/tasks/delete`, fetchData)
+            .then((res) => res.json())
+            .then(res => {
+                console.log(res);
+                window.location = "/";
+            });
+    }
+
     return (
         <Form onSubmit={updateTask}>
             <Form.Group>
@@ -142,7 +159,8 @@ function TaskDetailsForm(params) {
                     <option value="10">10</option>
                 </Form.Control>
             </Form.Group>
-            <Button variant="primary" type="submit" style={{ float: "right" }}>Actualizar&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
+            <Button className="deleteTaskBtn" variant="danger" onClick={deleteTask}>Eliminar&nbsp;&nbsp;<FontAwesomeIcon icon={faEraser} /></Button>
+            <Button className="updateTaskBtn" type="submit" style={{ float: "right" }}>Actualizar&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
         </Form>
     )
 }
