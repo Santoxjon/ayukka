@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Columns from './Columns';
 import CreateTask from './CreateTask';
+import TaskDetails from './TaskDetails';
 
 import {
     BrowserRouter as Router,
@@ -57,8 +58,8 @@ export function Main() {
                     <Route path="/columns/tasks/create">
                         <CreateTask />
                     </Route>
-                    <Route path="/columns/tasks/:id">
-                        <p>Detalles yo qué sé tío XDD</p>
+                    <Route path="/columns/:column_id/tasks/:task_id">
+                        <TaskDetails />
                     </Route>
                 </Switch>
             </main>
