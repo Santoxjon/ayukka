@@ -14,9 +14,9 @@ nav {
   padding: 0 !important;
 }
 
-#addColumnBtn {
-  background-color: #5A79B0;
-  border-color: #5A79C0;
+#addColumnBtn, .updateTaskBtn, .createTaskBtn {
+  background-color: #5A79B0 !important;
+  border-color: #5A79C0 !important;
 }
 
 #addColumnBtn:hover {
@@ -62,7 +62,6 @@ main {
 .column:not(:first-child) {
   margin-left: 1%;
 }
-
 
 .col-title {
   margin: 0;
@@ -127,7 +126,7 @@ main {
   justify-content: center;
 }
 
-#create_task, #edit_task{
+#create_task, #edit_task {
   background-color: rgba(227, 232, 238, 0.9);
   border-radius: 5px;
   min-width: 650px;
@@ -139,9 +138,13 @@ textarea {
   resize: none !important;
 }
 
-.priority-group{
+.priority-group {
   display: flex;
   justify-content: space-between;
+}
+
+.deleteTaskBtn {
+  background-color: Crimson !important;
 }
 
 footer {
