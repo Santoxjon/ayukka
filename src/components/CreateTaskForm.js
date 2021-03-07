@@ -56,7 +56,7 @@ function CreateTaskForm(params) {
             )
         })
         return (
-             columnList 
+            columnList
         )
     }
 
@@ -96,7 +96,7 @@ function CreateTaskForm(params) {
                 <Form.Check inline name="priority" label="10" type="radio" value="10" required />
             </Form.Group>
             <Button variant="dark" type="reset">Vaciar&nbsp;&nbsp;<FontAwesomeIcon icon={faTrashAlt} /></Button>
-            <Button variant="primary" type="submit" style={{ float: "right" }}>Crear&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
+            <Button className="createTaskBtn" type="submit" style={{ float: "right" }}>Crear&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
         </Form>
     )
 }
