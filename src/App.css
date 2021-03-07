@@ -119,7 +119,7 @@ main {
   margin: 0;
 }
 
-#create_task_root {
+#create_task_root, #edit_task_root {
   width: 100%;
   height: 100%;
   display: flex;
@@ -127,7 +127,7 @@ main {
   justify-content: center;
 }
 
-#create_task {
+#create_task, #edit_task{
   background-color: rgba(227, 232, 238, 0.9);
   border-radius: 5px;
   min-width: 650px;
