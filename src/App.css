@@ -99,7 +99,10 @@ main {
 }
 
 .task:hover {
-  filter: brightness(85%);
+  filter: brightness(95%);
+}
+
+.task-title {
   cursor: pointer;
 }
 
