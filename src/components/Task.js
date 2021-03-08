@@ -18,14 +18,20 @@ function Task(params) {
     let column = params.column;
     let task = params.task;
 
-    function goToTask() {
-        window.location = `/columns/${column._id}/tasks/${task.id}`
+    function goToTask(e) {
+        window.location = `/columns/${e.target.parentNode.parentNode.id.substr(5)}/tasks/${task.id}`
     }
 
     function Columns() {
-        let listColumns = columns.filter(col => col.name !== column.name).map(col => {
+        // let listColumns = columns.filter(col => col.name !== column.name).map(col => {
+        //     return (
+        //         <option value={col._id} data-colName={col.name}>{col.name}</option>
+        //     )
+        // })
+        
+        let listColumns = columns.map(col => {
             return (
-                <option value={col._id}>{col.name}</option>
+                <option value={col._id} data-colName={col.name}>{col.name}</option>
             )
         })
 
@@ -35,6 +41,7 @@ function Task(params) {
     }
 
     function moveTask(e) {
+        console.log(e.target.selectedOptions[0].getAttribute('data-colName'));
         let data = { taskId: task.id, columnId: column._id, newColumnId: e.target.value }
 
         let fetchData = {
@@ -47,12 +54,14 @@ function Task(params) {
             .then((res) => res.json())
             .then(res => {
                 console.log(res);
-                window.location = "/";
+                // window.location = "/";
+                document.querySelector(`#tasks${e.target.value}`).appendChild(document.querySelector(`#_${task.id}`))
+                column._id = e.target.value;
             });
     }
 
     return (
-        <div className="task" style={{ backgroundColor: `rgba(${column.color}, .85)` }}>
+        <div id={`_${task.id}`} className="task" style={{ backgroundColor: `rgba(${column.color}, .85)` }}>
             <h3 className="task-title" onClick={goToTask}>{task.name}</h3>
             <hr />
             <p className="task-text">
