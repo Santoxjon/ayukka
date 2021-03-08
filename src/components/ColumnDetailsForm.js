@@ -79,7 +79,7 @@ function ColumnDetailsForm(params) {
                 body: JSON.stringify(data)
             }
 
-            fetch(`${API_URL}/columns/${columnId}/delete`, fetchData)
+            fetch(`${API_URL}/columns/${columnId}/deleteCol`, fetchData)
                 .then((res) => res.json())
                 .then(res => {
                     console.log(res);
