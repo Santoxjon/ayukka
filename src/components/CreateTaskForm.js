@@ -7,9 +7,7 @@ import { faPencilAlt } from "@fortawesome/free-solid-svg-icons"
 
 import React, { useState, useEffect } from 'react';
 
-const MUTE = '#6c757d';
-const WARNING = '#c29100';
-const LIMIT = 'Crimson';
+import {MUTE, WARNING, LIMIT} from './Colors';
 
 const API_URL = `${process.env.REACT_APP_API_PROTOCOL}://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
 
@@ -96,7 +94,7 @@ function CreateTaskForm(params) {
                 <Form.Check inline name="priority" label="10" type="radio" value="10" required />
             </Form.Group>
             <Button variant="dark" type="reset">Vaciar&nbsp;&nbsp;<FontAwesomeIcon icon={faTrashAlt} /></Button>
-            <Button className="createTaskBtn" type="submit" style={{ float: "right" }}>Crear&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
+            <Button className="createTaskBtn" type="submit">Crear&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
         </Form>
     )
 }
