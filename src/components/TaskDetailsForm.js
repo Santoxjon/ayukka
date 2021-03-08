@@ -7,9 +7,7 @@ import { faPencilAlt } from "@fortawesome/free-solid-svg-icons"
 
 import React, { useState, useEffect } from 'react';
 
-const MUTE = '#6c757d';
-const WARNING = '#c29100';
-const LIMIT = 'Crimson';
+import {MUTE, WARNING, LIMIT} from './Colors';
 
 const API_URL = `${process.env.REACT_APP_API_PROTOCOL}://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
 
@@ -160,7 +158,7 @@ function TaskDetailsForm(params) {
                 </Form.Control>
             </Form.Group>
             <Button className="deleteTaskBtn" variant="danger" onClick={deleteTask}>Eliminar&nbsp;&nbsp;<FontAwesomeIcon icon={faEraser} /></Button>
-            <Button className="updateTaskBtn" type="submit" style={{ float: "right" }}>Actualizar&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
+            <Button className="updateTaskBtn" type="submit">Actualizar&nbsp;&nbsp;<FontAwesomeIcon icon={faPencilAlt} /></Button>
         </Form>
     )
 }
