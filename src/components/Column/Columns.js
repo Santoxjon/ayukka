@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Column from './Column';
-import Task from './Task';
+import Task from '../Task/Task';
 
 function Columns() {
 

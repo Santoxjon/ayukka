@@ -8,11 +8,11 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Columns from './Columns';
-import CreateColumn from './CreateColumn';
-import CreateTask from './CreateTask';
-import TaskDetails from './TaskDetails';
-import ColumnDetails from './ColumnDetails';
+import Columns from './Column/Columns';
+import CreateColumn from './Column/CreateColumn';
+import ColumnDetails from './Column/ColumnDetails';
+import CreateTask from './Task/CreateTask';
+import TaskDetails from './Task/TaskDetails';
 
 import {
     BrowserRouter as Router,

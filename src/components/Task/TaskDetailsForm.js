@@ -7,7 +7,7 @@ import { faPencilAlt } from "@fortawesome/free-solid-svg-icons"
 
 import React, { useState, useEffect } from 'react';
 
-import {MUTE, WARNING, LIMIT} from './Colors';
+import {MUTE, WARNING, LIMIT} from './../Colors';
 
 const API_URL = `${process.env.REACT_APP_API_PROTOCOL}://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
 
