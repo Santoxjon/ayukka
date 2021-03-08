@@ -1,11 +1,20 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons"
+
 function Column(params) {
     let column = params.column;
     let taskList = params.taskList;
     return (
         <div id={`_${column._id}`} className="column" style={{ backgroundColor: `rgba(${column.color}, .55)` }} >
-            <h1 className="col-title">
-                {column.name}
-            </h1>
+            <div className="col-header">
+                <h1 className="col-title">
+                    {column.name}
+                </h1>
+                <div className="col-cog">
+                    {/* <FontAwesomeIcon icon={faCog} /> */}
+                    <a href={`/columns/${column._id}`}><FontAwesomeIcon icon={faCog} /></a>
+                </div>
+            </div>
             <h2 className="col-description">
                 {column.description}
             </h2>
