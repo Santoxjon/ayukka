@@ -9,8 +9,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Columns from './Columns';
+import CreateColumn from './CreateColumn';
 import CreateTask from './CreateTask';
 import TaskDetails from './TaskDetails';
+import ColumnDetails from './ColumnDetails';
 
 import {
     BrowserRouter as Router,
@@ -19,12 +21,11 @@ import {
     Redirect
 } from "react-router-dom";
 
-
 export function Header() {
     return (
         <header>
             <Navbar variant="dark">
-                <Navbar.Brand href="/">🗒 Ayukka</Navbar.Brand>
+                <Navbar.Brand href="/columns">🗒 Ayukka</Navbar.Brand>
                 <Form inline method="GET" className="mr-auto w-50">
                     <FormControl type="text" placeholder="Qué estamos buscando?" className="mr-sm-2 w-75" />
                     <Button variant="outline-light">Buscar <FontAwesomeIcon icon={faSearch} flip="horizontal" /></Button>
@@ -50,7 +51,10 @@ export function Main() {
                         <Columns />
                     </Route>
                     <Route path="/columns/create">
-                        <p>Crear columna</p>
+                        <CreateColumn />
+                    </Route>
+                    <Route exact path="/columns/:column_id">
+                        <ColumnDetails />
                     </Route>
                     <Route exact path="/columns/tasks">
                         <Redirect to="/columns" />
