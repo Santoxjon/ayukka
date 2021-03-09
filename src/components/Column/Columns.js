@@ -14,10 +14,12 @@ function Columns() {
             fetch(`${API_URL}/columns`)
                 .then(res => res.json())
                 .then(data => {
+                    if (data.length < 5) {
+                        document.getElementById("columns").style.justifyContent = "flex-start";
+                    }
                     setColumns(data)
                 })
         }
-
         getColumns();
     }, [])
 
