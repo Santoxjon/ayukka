@@ -1,11 +1,8 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Columns from './Column/Columns';
@@ -26,10 +23,11 @@ export function Header() {
         <header>
             <Navbar variant="dark">
                 <Navbar.Brand href="/columns">🗒 Ayukka</Navbar.Brand>
-                <Form inline method="GET" className="mr-auto w-50">
+                {/* <Form inline method="GET" className="mr-auto w-50">
                     <FormControl type="text" placeholder="Qué estamos buscando?" className="mr-sm-2 w-75" />
                     <Button variant="outline-light">Buscar <FontAwesomeIcon icon={faSearch} flip="horizontal" /></Button>
-                </Form>
+                </Form> */}
+                <Nav className="w-75"></Nav>
                 <Nav className="w-25">
                     <Button id="addColumnBtn" className="mr-sm-2 w-50" href="/columns/create" rel="noreferrer">Nueva Columna</Button>
                     <Button id="addTask" className="mr-sm-2 w-50" href="/columns/tasks/create" rel="noreferrer">Nueva Tarea</Button>
