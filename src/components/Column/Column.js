@@ -22,10 +22,6 @@ function Column(params) {
 
             moveTask(taskId, columnId, newColumnId, e);
         }
-        let tasks_divs = Array.from(document.getElementsByClassName('tasks'))
-        tasks_divs.forEach(div => {
-            div.style.paddingBottom = "0";
-        });
     }
 
     function moveTask(taskId, columnId, newColumnId, e) {

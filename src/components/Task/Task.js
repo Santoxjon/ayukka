@@ -13,15 +13,22 @@ function Task(params) {
     }
 
     function dragStart(e) {
-        e.dataTransfer.setData("Text", e.target.id +"-"+e.target.parentNode.id);
+        e.dataTransfer.setData("Text", e.target.id + "-" + e.target.parentNode.id);
         let tasks_divs = Array.from(document.getElementsByClassName('tasks'))
         tasks_divs.forEach(div => {
             div.style.paddingBottom = "50px";
         });
     }
 
+    function dragEnd() {
+        let tasks_divs = Array.from(document.getElementsByClassName('tasks'))
+        tasks_divs.forEach(div => {
+            div.style.paddingBottom = "0";
+        });
+    }
+
     return (
-        <div onDragStart={dragStart} draggable id={`_${task.id}`} className="task" style={{ backgroundColor: `rgba(${column.color},.85)` }}>
+        <div onDragStart={dragStart} onDragEnd={dragEnd} draggable id={`_${task.id}`} className="task" style={{ backgroundColor: `rgba(${column.color},.85)` }}>
             <h3 className="task-title" onClick={goToTask}>{task.name}</h3>
             <hr />
             <p className="task-text">
