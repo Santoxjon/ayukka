@@ -5,6 +5,10 @@
   min-width: 1230px;
 }
 
+header {
+  user-select: none;
+}
+
 nav {
   background-color: #3E2F41 !important;
 }
@@ -55,6 +59,7 @@ main {
   justify-content: space-between;
   align-items: flex-start;
   min-height: 50%;
+  user-select: none;
 }
 
 .column {
@@ -113,7 +118,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 50px;
 }
 
 .task {
@@ -122,8 +126,9 @@ main {
   border: 1px solid black;
   padding: 1.5px 3px;
   border-radius: 3px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  min-height: 120px;
 }
 
 .task:not(:last-child) {
@@ -159,6 +164,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 #create_task, #edit_task, #create_column, #edit_col {
@@ -207,6 +213,7 @@ footer {
   background-color: #5A79C0;
   text-align: center;
   padding: 10px 0;
+  user-select: none;
 }
 
 footer a {
