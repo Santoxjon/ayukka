@@ -60,7 +60,7 @@ function ColumnDetailsForm(params) {
             body: JSON.stringify(data)
         }
 
-        fetch(`${API_URL}/columns/${columnId}/update`, fetchData)
+        fetch(`${API_URL}/columns/${columnId}/updateCol`, fetchData)
             .then((res) => res.json())
             .then(res => {
                 window.location = "/";
